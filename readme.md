@@ -1,20 +1,22 @@
-# 1) start db
+# 1) git clone
+git clone  https://github.com/webdevrashmika-beep/spatial_api.git
+# 2) start db
 docker compose up -d
 
-# 2) create venv & install
+# 3) create venv & install
 python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 
-# 3) copy env
+# 4) copy env
 cp .env.example .env
 
-# 4) run
+# 5) run
 uvicorn app.main:app --reload
 
-# 5) Swagger
+# 6) Swagger
  http://127.0.0.1:8000/docs
 
-# 6) Example payloads
+# 7) Example payloads
     - Create a point
         POST /points
         {
@@ -37,3 +39,4 @@ uvicorn app.main:app --reload
                 [[77.5,13.0],[77.7,13.0],[77.7,12.9],[77.5,12.9],[77.5,13.0]]
             ]
         }   
+
